@@ -16,3 +16,47 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+// maincolor: #03a67b
+// higtlight: #97dac9
+
+// 固定底部footer
+html {
+  height: 100%;
+  }
+
+body {
+  min-height: 100%;                                   // footer固定底部
+  display: flex;                                      // footer固定底部
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: normal;
+  color: #000;
+  .content {
+    flex: 1;                                          // footer固定底部
+  }
+  .navbar {
+    border-radius: 0;                                 //圆角为0
+  }
+  .navbar-default {
+    background-color: #fff;
+    opacity: 0.8;
+    border-top: none;
+    box-shadow: 0px 0.5px 4.85px 0.15px rgba(7, 0, 2, 0.08);
+    z-index: 4;
+    .navbar-nav > li {
+      font-size: 14px;
+      list-style: none;
+        a {
+          color: #777;
+          transition: 0.3s;
+        }
+        a:hover {
+          color: #03a67b;
+          transition: 0.3s;
+          text-decoration: none;
+        }
+    }
+  }
+
+}
