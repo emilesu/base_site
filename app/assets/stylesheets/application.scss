@@ -29,9 +29,10 @@ body {
   min-height: 100%;                                   // footer固定底部
   display: flex;                                      // footer固定底部
   flex-direction: column;
+  // font-family: "Noto Sans S Chinese";
   font-size: 14px;
   font-weight: normal;
-  color: #000;
+  color: #999;
   .content {
     flex: 1;                                          // footer固定底部
   }

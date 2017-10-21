@@ -1,3 +1,26 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-banner {
+  margin-top: -20px;
+  height: 589px;
+  width: inherit;
+  background-image: url(https://i.loli.net/2017/10/21/59eb687166f35.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-position-x: 25%;
+  background-position-y: 25%;
+  background-origin: padding-box;
+  vertical-align: middle;
+  position: relative;
+}
+
+.slogan {
+
+  h2 {
+    color: #fff;
+    font-size: 3.5em;
+    font-weight: 300;
+    margin-top: 100px;
+    text-align: center;
+    text-shadow: 0px 2px 10.92px rgba(34, 30, 31, 35);
+  }
+}
