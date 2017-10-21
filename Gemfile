@@ -36,6 +36,7 @@ gem "rails-i18n"
 gem "devise-i18n"
 gem 'devise'
 gem 'simple_form'
+gem 'font-awesome-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
