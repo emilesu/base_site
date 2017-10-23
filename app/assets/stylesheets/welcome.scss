@@ -154,3 +154,44 @@
     }
   }
 }
+
+.say-box {
+  margin-top: 40px;
+  background-color: #666;
+  // height: 400px;
+  h2 {
+    padding: 40px 0 60px;
+    font-size: 40px;
+    font-weight: 300;
+    color: #fff;
+  }
+  .say-avatar {
+    img {
+      height: 80px;
+      width: 80px;
+    }
+    .say-name {
+      display: inline-block;
+      vertical-align: middle;
+      text-align: left;
+      padding-left: 16px;
+    }
+    h5 {
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+    }
+    p {
+      font-weight: 300;
+      color: #dbdbdb;
+    }
+    .say-text {
+      margin: 15px 0 60px;
+      font-size: 16px;
+      line-height: 27px;
+      color: #dbdbdb;
+      text-align: justify;
+    }
+  }
+
+}
