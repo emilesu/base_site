@@ -4,9 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # enail 用户名缩写
+
+  # 与 project关系
+  has_many :projects
+
+  # email 用户名缩写
   def display_name
     self.email.split("@").first
   end
-  
+
 end
