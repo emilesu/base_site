@@ -8,7 +8,7 @@
 <%= simple_form_for [:account, @project] do |f| %>
   <div class="form-group new-project-form">
     <%= f.input :title, :label => false, :placeholder => "任务标题", :autofocus => true, :required => true %>
-    <%= f.input :description, :label => false, :placeholder => "请简单描述描述...", :required => true %>
+    <%= f.input :description, :label => false, :placeholder => "请简单描述描述...", :required => true, toolbar: 'mini', language: 'zh-CN' %>
     <%= f.submit "提交", :class => "button button-actio", :data => { disable_with: "Submiting..." } %>
   </div>
 <% end %>

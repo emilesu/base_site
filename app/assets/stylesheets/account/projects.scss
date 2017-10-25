@@ -13,6 +13,9 @@
   label {
     font-weight: normal;
   }
+  button-a {
+    padding-top: 20px;
+  }
 }
 
 .project-index {
@@ -28,6 +31,10 @@
     }
     p {
       margin: 20px 0;
+    }
+    img {
+      max-width:100%;
+      height:auto;
     }
   }
 }
