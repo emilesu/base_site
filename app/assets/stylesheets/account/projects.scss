@@ -37,4 +37,13 @@
       height:auto;
     }
   }
+  .status-box {
+    span {
+      margin: 5px;
+    }
+    .status-true {
+      background-color: #97dac9;
+      color: #fff;
+    }
+  }
 }
