@@ -1,5 +1,10 @@
 class Account::ProjectsController < ApplicationController
   before_action :authenticate_user!
+  layout "account"
+
+  def show
+    @projects = Project.all
+  end
 
   def new
     @project = Project.new

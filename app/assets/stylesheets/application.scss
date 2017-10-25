@@ -36,6 +36,7 @@ body {
   font-size: 14px;
   font-weight: 300;
   color: #333;
+  line-height: 2em;
   .content {
     flex: 1;                                          // footer固定底部
   }
@@ -66,5 +67,25 @@ body {
 }
 
 footer {
-  height: 60px;
+  height: 80px;
+}
+
+.account-sidebar {
+  height: 800px;
+  background: #03a67b;
+  margin-top: 30px;
+  padding-top: 50px;
+  overflow: hidden;
+  a {
+    font-size: 14px;
+    margin: 5px -15px;
+    background-color: #03a67b;
+    width: 285px;
+    text-align: left;
+    transition: 0.3s;
+  }
+  a:hover {
+    background-color: #97dac9;
+    transition: 0.3s;
+  }
 }
