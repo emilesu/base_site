@@ -2,8 +2,9 @@
 
   <% @projects.each do |project| %>
     <div class="project-index-box">
-      <%= project.title %>
-      <%= project.description %>
+      <h2><%= project.title %></h2>
+      <hr>
+      <p><%= project.description %></p>
     </div>
   <% end %>
 

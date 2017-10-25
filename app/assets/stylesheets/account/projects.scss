@@ -14,3 +14,20 @@
     font-weight: normal;
   }
 }
+
+.project-index {
+  .project-index-box {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #f1f1f1;
+    color: #666;
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 400;
+    }
+    p {
+      margin: 20px 0;
+    }
+  }
+}
