@@ -4,3 +4,11 @@
 2、使股东、员工、客户、合作伙伴了解企业真正的使命、核心价值观等思想，使思想高度统一，进而产生企业忠实度、品牌忠实度。 <br>
 3、在现代企业管理中，多数企业均采用制度管理的策略，这是基础管理品牌忠实度。</p>
 </div>
+
+<%= simple_form_for [:account, @project] do |f| %>
+  <div class="form-group new-project-form">
+    <%= f.input :title, :label => false, :placeholder => "任务标题", :autofocus => true, :require => true %>
+    <%= f.input :description, :label => false, :placeholder => "请简单描述描述...", :require => true %>
+    <%= f.submit "提交", :class => "button button-actio", :data => { disable_with: "Submiting..." } %>
+  </div>
+<% end %>
