@@ -21,6 +21,11 @@ class Account::ProjectsController < ApplicationController
     end
   end
 
+  def show
+    @project = Project.find(params[:id])
+    @posts = @project.posts.order("created_at DESC")
+  end
+
 # --------
   private
 
