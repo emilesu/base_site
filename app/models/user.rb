@@ -8,6 +8,9 @@ class User < ApplicationRecord
   # 与 project关系
   has_many :projects
 
+  # 与 post 关系
+  has_many :posts
+
   # email 用户名缩写
   def display_name
     self.email.split("@").first
