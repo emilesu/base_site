@@ -8,8 +8,7 @@ class Project < ApplicationRecord
   belongs_to :user
 
   # 与 post 关系
-  has_many :posts
-  validates :content, presence: true
+  has_many :posts, dependent: :destroy
 
   # 工程状态
   STATUS = ["communication", "payment", "development", "text", "complete"]

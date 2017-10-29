@@ -6,10 +6,10 @@ class User < ApplicationRecord
 
 
   # 与 project关系
-  has_many :projects
+  has_many :projects, dependent: :destroy
 
   # 与 post 关系
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   # email 用户名缩写
   def display_name

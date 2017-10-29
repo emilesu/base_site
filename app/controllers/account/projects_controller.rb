@@ -23,14 +23,15 @@ class Account::ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @posts = @project.posts.order("created_at DESC")
+    @post = Post.new
+    # @posts = @project.posts.order("created_at DESC")
   end
 
 # --------
   private
 
   def project_params
-    params.require(:project).permit(:title, :description)
+    params.require(:project).permit(:title, :description, :user_id)
   end
 
 end
