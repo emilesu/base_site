@@ -24,7 +24,7 @@ class Account::ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @post = Post.new
-    # @posts = @project.posts.order("created_at DESC")
+    @posts = @project.posts.order("created_at DESC")
   end
 
 # --------

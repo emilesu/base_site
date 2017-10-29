@@ -63,14 +63,18 @@
 
     <!-- posts 过程 -->
     <div class="post-box">
-      <% @project.posts.each do |post| %>
+      <% @posts.each do |post| %>
         <% if post.user.role != "admin" %>
           <div class="customer-post">
+            <span><u><strong><%= post.user.display_name %></u> - </strong></span>
+            <span><%= post.created_at.to_s(:db) %></span>
             <%= post.content %>
           </div>
         <% else %>
           <div class="admin-post">
-            <%= post.content %>
+            <span><%= post.created_at.to_s(:db) %> - </span>
+            <span><u><strong><%= post.user.display_name %></u></strong></span>
+            <p><%= post.content %></p>
           </div>
         <% end %>
       <% end %>

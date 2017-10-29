@@ -36,14 +36,26 @@
       max-width:100%;
       height:auto;
     }
+    .status-box {
+      span {
+        margin: 5px;
+      }
+      .status-true {
+        background-color: #97dac9;
+        color: #fff;
+      }
+    }
   }
-  .status-box {
-    span {
-      margin: 5px;
-    }
-    .status-true {
-      background-color: #97dac9;
-      color: #fff;
-    }
+  .project-index-box:hover {
+    background-color: #f8f8f8;
+    transition: 0.3s;
+    // margin-top: -0.5%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.1);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+  }
+  a:hover {
+    text-decoration: none;
   }
 }

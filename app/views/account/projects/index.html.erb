@@ -1,57 +1,63 @@
 <div class="project-index">
 
   <% @projects.each do |project| %>
-    <div class="project-index-box">
-      <h2><%= project.title %></h2>
-      <hr>
-      <%= simple_format sanitize project.description %>
-      <hr>
 
-      <!-- 工程进度 -->
-      <div class="status-box text-center">
-        <!-- 沟通需求 -->
-        <% if project.status == "communication"  %>
-          <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small">确定付款 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small">设计开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small">修改测试 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+    <%= link_to account_project_path(project) do %>
 
-        <!-- 确定付款 -->
-        <% elsif project.status == "payment"  %>
-          <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small">设计开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small">修改测试 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+      <div class="project-index-box">
+        <h2><%= project.title %></h2>
+        <hr>
+        <%= simple_format sanitize project.description %>
+        <hr>
 
-        <!-- 设计开发 -->
-        <% elsif project.status == "development"  %>
-          <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small status-true">设计开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small">修改测试 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+        <!-- 工程进度 -->
+        <div class="status-box text-center">
+          <!-- 沟通需求 -->
+          <% if project.status == "communication"  %>
+            <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small">确定付款 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small">设计开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small">修改测试 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
 
-        <!-- 测试修改 -->
-        <% elsif project.status == "text"  %>
-          <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small status-true">设计开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small status-true">测试修改 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+          <!-- 确定付款 -->
+          <% elsif project.status == "payment"  %>
+            <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small">设计开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small">修改测试 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
 
-        <!-- 完成开发 -->
-        <% elsif project.status == "complete"  %>
-          <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small status-true">设计开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small status-true">测试修改 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-          <span class="button button-small status-true">完成开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
-        <% end %>
+          <!-- 设计开发 -->
+          <% elsif project.status == "development"  %>
+            <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small status-true">设计开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small">修改测试 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+
+          <!-- 测试修改 -->
+          <% elsif project.status == "text"  %>
+            <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small status-true">设计开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small status-true">测试修改 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+
+          <!-- 完成开发 -->
+          <% elsif project.status == "complete"  %>
+            <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small status-true">设计开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small status-true">测试修改 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+            <span class="button button-small status-true">完成开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+          <% end %>
+        </div>
+
       </div>
-      
-    </div>
+
+    <% end %>
+
   <% end %>
 
 </div>

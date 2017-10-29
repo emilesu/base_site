@@ -1,8 +1,24 @@
 .post-box {
+  margin: 50px 0 ;
   .customer-post {
+    margin-bottom: 30px;
+    margin-right: 45px;
+    padding: 20px;
+    background-color: #f9f9f9;
 
   }
   .admin-post {
+    span {
 
+    }
+    margin-bottom: 30px;
+    text-align: right;
+    color: #fff;
+    margin-left: 45px;
+    padding: 20px;
+    background-color: #97dac9;
+    p {
+      text-align: justify;
+    }
   }
 }
