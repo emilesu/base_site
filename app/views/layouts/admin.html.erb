@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BaseSite</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  </head>
+
+  <body>
+    <div class="content">
+
+      <div class="container-fluid">
+        <div class="row">
+          <%= render "common/navbar" %>
+          <div class="container">
+            <div class="account-sidebar col-md-3 hidden-sm hidden-xs">
+
+                <%= link_to("任务管理", new_account_project_path, :class => "button button-uppercase button-primary") %>
+
+            </div>
+            <div class="account-content col-md-9">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <%= render "common/footer" %>
+
+  </body>
+</html>

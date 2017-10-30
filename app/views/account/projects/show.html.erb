@@ -67,12 +67,12 @@
         <% if post.user.role != "admin" %>
           <div class="customer-post">
             <span><u><strong><%= post.user.display_name %></u> - </strong></span>
-            <span><%= post.created_at.to_s(:db) %></span>
+            <span><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></span>
             <%= post.content %>
           </div>
         <% else %>
           <div class="admin-post">
-            <span><%= post.created_at.to_s(:db) %> - </span>
+            <span><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %> - </span>
             <span><u><strong><%= post.user.display_name %></u></strong></span>
             <p><%= post.content %></p>
           </div>

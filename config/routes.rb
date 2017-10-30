@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :projects
+  end
+
   root "welcome#index"
 end
