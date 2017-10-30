@@ -64,7 +64,14 @@ body {
         }
     }
   }
+  .dropdown-menu {
+    a {
+      font-size: 14px;
+      font-weight: 400;
+      color: #333;
+    }
 
+  }
 }
 
 footer {
