@@ -1,0 +1,93 @@
+<div class="project-index">
+
+  <div class="project-index-box">
+    <h2><%= @project.title %></h2>
+
+    <span><%= link_to("删除", admin_project_path(@project), method: :delete, :class => "button button-pill button-tiny pull-right") %></span>
+    <span><%= link_to("编辑", edit_admin_project_path(@project), :class => "button button-pill button-tiny pull-right", data: { config: "确定删除吗？" }) %></span>
+    <span>发布时间:<%= @project.created_at.strftime("%Y/%m/%d %H:%M:%S") %></span>
+    <hr>
+    <%= simple_format sanitize @project.description %>
+    <hr>
+
+    <!-- 工程进度 -->
+    <div class="status-box text-center">
+      <!-- 沟通需求 -->
+      <% if @project.status == "communication"  %>
+        <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small">确定付款 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small">设计开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small">修改测试 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+
+      <!-- 确定付款 -->
+      <% elsif @project.status == "payment"  %>
+        <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small">设计开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small">修改测试 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+
+      <!-- 设计开发 -->
+      <% elsif @project.status == "development"  %>
+        <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small status-true">设计开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small">修改测试 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+
+      <!-- 测试修改 -->
+      <% elsif @project.status == "text"  %>
+        <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small status-true">设计开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small status-true">测试修改 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small">完成开发 <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+
+      <!-- 完成开发 -->
+      <% elsif @project.status == "complete"  %>
+        <span class="button button-small status-true">沟通需求 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small status-true">确定付款 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small status-true">设计开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small status-true">测试修改 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+        <span class="button button-small status-true">完成开发 <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i></span>
+      <% end %>
+    </div>
+
+
+    <!-- new post 输入框 -->
+    <div>
+      <%= simple_form_for ([:admin, @project, @post]) do |f| %>
+        <div class="form-group new-project-form">
+          <%= f.input :content, :label => false, :placeholder => "请输入...", :require => true %>
+          <%= f.submit "提交", :class => "button button-actio", :data => { disable_with: "Subminting..."} %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- posts 过程 -->
+    <div class="post-box">
+      <% @posts.each do |post| %>
+        <% if post.user.role != "admin" %>
+          <div class="customer-post">
+            <span><u><strong><%= post.user.display_name %></u> - </strong></span>
+            <span><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></span>
+            <span><%= link_to("编辑", edit_admin_project_post_path(@project, post), :class => "button button-pill button-tiny pull-right") %></span>
+            <span><%= link_to("删除", admin_project_post_path(@project, post), method: :delete, :class => "button button-pill button-tiny pull-right", data: { config: "确定删除吗？" }) %></span>
+            <%= simple_format sanitize post.content %>
+          </div>
+        <% else %>
+          <div class="admin-post">
+            <span><%= link_to("编辑", edit_admin_project_post_path(@project, post), :class => "button button-pill button-tiny") %></span>
+            <span><%= link_to("删除", admin_project_post_path(@project, post), method: :delete, :class => "button button-pill button-tiny", data: { config: "确定删除吗？" }) %></span>
+            <span><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %> - </span>
+            <span><u><strong><%= post.user.display_name %></u></strong></span>
+            <p><%= simple_format sanitize post.content %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

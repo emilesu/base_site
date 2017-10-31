@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, @project, @post] do |f| %>
+  <div class="form-group">
+    <%= f.input :content, as: :ckeditor, ckeditor: { toolbar: 'mini', language: 'zh-CN'}, :label => "任务描述" %>
+    <%= f.submit "提交", :class => "button button-actio", :data => { disable_with: "Submiting..." } %>
+  </div>
+<% end %>

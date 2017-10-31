@@ -2,7 +2,7 @@
 
   <% @projects.each do |project| %>
 
-    <%= link_to account_project_path(project) do %>
+    <%= link_to admin_project_path(project) do %>
 
       <div class="project-index-box">
         <h2><%= project.title %></h2>

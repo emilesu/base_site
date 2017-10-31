@@ -8,6 +8,12 @@ class Admin::ProjectsController < AdminController
     @project = Project.find(params[:id])
   end
 
+  def show
+    @project = Project.find(params[:id])
+    @post = Post.new
+    @posts = @project.posts.order("created_at DESC")
+  end
+
   def update
     @project = Project.find(params[:id])
 
