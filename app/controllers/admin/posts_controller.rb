@@ -5,6 +5,10 @@ class Admin::PostsController < AdminController
     @post = Post.new
   end
 
+  def index
+    @posts = Post.all.order("created_at DESC")
+  end
+
   def create
     @project = Project.find(params[:project_id])
     @post = Post.new(post_params)

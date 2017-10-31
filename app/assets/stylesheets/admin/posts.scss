@@ -1,3 +1,44 @@
-// Place all the styles related to the admin/posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.post-index {
+  .post-index-box {
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 400;
+    }
+    p {
+      margin: 20px 0;
+    }
+    img {
+      max-width:100%;
+      height:auto;
+    }
+    .status-box {
+      span {
+        margin: 5px;
+      }
+      .status-true {
+        background-color: #97dac9;
+        color: #fff;
+      }
+    }
+    .admin-post-box {
+      .admin-customer-post {
+        border: 1px solid #f1f1f1;
+        color: #666;
+        margin-bottom: 30px;
+        padding: 20px 20px 0;
+        background-color: #fff;
+      }
+      .admin-customer-post:hover {
+        transition: 0.3s;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.1);
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

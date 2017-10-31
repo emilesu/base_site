@@ -68,13 +68,13 @@
           <div class="customer-post">
             <span><u><strong><%= post.user.display_name %></u> - </strong></span>
             <span><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></span>
-            <%= post.content %>
+            <%= simple_format sanitize post.content %>
           </div>
         <% else %>
           <div class="admin-post">
             <span><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %> - </span>
             <span><u><strong><%= post.user.display_name %></u></strong></span>
-            <p><%= post.content %></p>
+            <%= simple_format sanitize post.content %>
           </div>
         <% end %>
       <% end %>

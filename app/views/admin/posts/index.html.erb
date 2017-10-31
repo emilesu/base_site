@@ -1,0 +1,20 @@
+<div class="post-index">
+  <div class="post-index-box">
+    <div class="admin-post-box">
+      <% @posts.each do |post| %>
+        <%= link_to admin_project_path(post.project) do%>
+          <% if post.user.role != "admin" %>
+            <div class="admin-customer-post">
+              <span><u><strong><%= post.user.display_name %></u> - </strong></span>
+              <span><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></span>
+              <% if post.project.posts.last.user.role == "admin" %>
+                <span class="badge pull-right">已答复</span>
+              <% end %>
+              <%= simple_format sanitize post.content %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

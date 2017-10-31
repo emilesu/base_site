@@ -82,7 +82,7 @@
             <span><%= link_to("删除", admin_project_post_path(@project, post), method: :delete, :class => "button button-pill button-tiny", data: { config: "确定删除吗？" }) %></span>
             <span><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %> - </span>
             <span><u><strong><%= post.user.display_name %></u></strong></span>
-            <p><%= simple_format sanitize post.content %></p>
+            <%= simple_format sanitize post.content %>
           </div>
         <% end %>
       <% end %>
